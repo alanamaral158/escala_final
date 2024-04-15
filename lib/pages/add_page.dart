@@ -4,7 +4,8 @@ import 'package:escala_app/repositories/escala_repository.dart';
 import 'package:flutter/material.dart';
 
 class EscalaAdd extends StatefulWidget {
-  EscalaAdd({super.key});
+  final Function() reloadCallback;
+  const EscalaAdd({super.key, required this.reloadCallback});
 
   @override
   State<EscalaAdd> createState() => _EscalaAddState();
@@ -43,6 +44,8 @@ class _EscalaAddState extends State<EscalaAdd> {
         violao: violaoEquipe,
         guitarra: guitarraEquipe,
       ));
+
+      widget.reloadCallback();
 
       Navigator.pop(context);
     }

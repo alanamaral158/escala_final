@@ -1,4 +1,5 @@
 import 'package:escala_app/models/escala.dart';
+import 'package:escala_app/pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,7 +36,7 @@ class _EquipePageState extends State<EquipePage> {
           const Divider(
             thickness: 3,
             height: 0,
-            color: Color.fromARGB(255, 255, 0, 0),
+            color: Pallete.gradient2,
           ),
           SizedBox(
             width: double.infinity,
@@ -49,7 +50,7 @@ class _EquipePageState extends State<EquipePage> {
                     child: Icon(
                       Icons.account_circle_sharp,
                       size: 50,
-                      color: Colors.red,
+                      color: Pallete.gradient1,
                     ),
                   ),
                   Padding(
@@ -123,7 +124,7 @@ class _EquipePageState extends State<EquipePage> {
           const Divider(
             thickness: 3,
             height: 0,
-            color: Color.fromARGB(255, 255, 0, 0),
+            color: Pallete.gradient2,
           ),
           Container(
             color: Colors.white,
@@ -138,7 +139,7 @@ class _EquipePageState extends State<EquipePage> {
                     child: Icon(
                       Icons.account_circle_sharp,
                       size: 50,
-                      color: Colors.red,
+                      color: Pallete.gradient1,
                     ),
                   ),
                   Padding(
@@ -244,7 +245,7 @@ class _EquipePageState extends State<EquipePage> {
                     child: Icon(
                       Icons.account_circle_sharp,
                       size: 50,
-                      color: Colors.red,
+                      color: Pallete.gradient1,
                     ),
                   ),
                   Padding(
@@ -350,7 +351,7 @@ class _EquipePageState extends State<EquipePage> {
                     child: Icon(
                       Icons.account_circle_sharp,
                       size: 50,
-                      color: Colors.red,
+                      color: Pallete.gradient1,
                     ),
                   ),
                   Padding(

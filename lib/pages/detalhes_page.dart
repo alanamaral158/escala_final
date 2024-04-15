@@ -1,6 +1,7 @@
 import 'package:escala_app/models/escala.dart';
 import 'package:escala_app/pages/equipe_page.dart';
 import 'package:escala_app/pages/ordem_page.dart';
+import 'package:escala_app/pallete.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -18,7 +19,6 @@ class _DetalhesPageState extends State<DetalhesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.redAccent,
           centerTitle: true,
           elevation: 3,
           title: Text('Escala ${widget.escala.data}',
@@ -26,6 +26,12 @@ class _DetalhesPageState extends State<DetalhesPage> {
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 20)),
+          backgroundColor: Colors.transparent,
+          flexibleSpace: Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+            colors: [Pallete.gradient1, Pallete.gradient2, Pallete.gradient3],
+          ))),
         ),
         body: Container(
           padding: const EdgeInsets.only(top: 5),
@@ -40,12 +46,12 @@ class _DetalhesPageState extends State<DetalhesPage> {
                       physics: const ClampingScrollPhysics(),
                       padding: const EdgeInsets.only(
                           top: 10, left: 10, right: 10, bottom: 10),
-                      unselectedLabelColor: Colors.red,
+                      unselectedLabelColor: Pallete.gradient1,
                       labelColor: Colors.white,
                       indicatorSize: TabBarIndicatorSize.label,
                       indicator: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          color: Colors.redAccent),
+                          color: Pallete.gradient1),
                       tabs: [
                         Tab(
                           child: Container(
@@ -53,7 +59,7 @@ class _DetalhesPageState extends State<DetalhesPage> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 border: Border.all(
-                                    color: Colors.redAccent, width: 1)),
+                                    color: Pallete.gradient1, width: 1)),
                             child: const Align(
                               alignment: Alignment.center,
                               child: Row(
@@ -74,7 +80,7 @@ class _DetalhesPageState extends State<DetalhesPage> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 border: Border.all(
-                                    color: Colors.redAccent, width: 1)),
+                                    color: Pallete.gradient1, width: 1)),
                             child: const Align(
                               alignment: Alignment.center,
                               child: Text("Ordem"),

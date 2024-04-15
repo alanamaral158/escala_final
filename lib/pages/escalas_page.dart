@@ -1,4 +1,5 @@
 import 'package:escala_app/pages/edit_page.dart';
+import 'package:escala_app/pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:escala_app/models/escala.dart';
 import 'package:escala_app/pages/detalhes_page.dart';
@@ -6,13 +7,15 @@ import 'package:escala_app/repositories/escala_repository.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EscalaPage extends StatefulWidget {
-  EscalaPage({super.key});
+  const EscalaPage({super.key});
 
   @override
   State<EscalaPage> createState() => _EscalaPageState();
 }
 
 class _EscalaPageState extends State<EscalaPage> {
+  
+
   mostrarDetalhes(Escala escala) {
     Navigator.push(context,
         MaterialPageRoute(builder: (_) => DetalhesPage(escala: escala)));
@@ -35,7 +38,7 @@ class _EscalaPageState extends State<EscalaPage> {
                       builder: (_) => EscalaEdit(escala: tabela[index])));
             },
             child: Container(
-              color: Colors.grey[050],
+              color: Pallete.backgroundColor,
               child: ListTile(
                 leading: const SizedBox(
                   width: 56,
@@ -44,9 +47,9 @@ class _EscalaPageState extends State<EscalaPage> {
                     elevation: 5,
                     clipBehavior: Clip.antiAlias,
                     margin: EdgeInsets.all(0),
-                    color: Colors.redAccent,
+                    color: Pallete.gradient1,
                     child: Icon(Icons.calendar_month,
-                        color: Colors.white, size: 40),
+                        color: Pallete.whiteColor, size: 40),
                   ),
                 ),
                 trailing: IconButton(
@@ -61,8 +64,7 @@ class _EscalaPageState extends State<EscalaPage> {
                                       child: const Text(
                                         'Cancelar',
                                         style: TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 61, 61, 61)),
+                                            color: Pallete.blackColor),
                                       ),
                                       onPressed: () {
                                         Navigator.pop(context);
@@ -98,7 +100,7 @@ class _EscalaPageState extends State<EscalaPage> {
                     Container(
                       padding: const EdgeInsets.only(top: 5),
                       child: Card(
-                          color: const Color.fromARGB(255, 54, 60, 64),
+                          color: Pallete.blackColor,
                           margin: const EdgeInsets.all(0),
                           clipBehavior: Clip.antiAlias,
                           shape: const RoundedRectangleBorder(
@@ -111,7 +113,7 @@ class _EscalaPageState extends State<EscalaPage> {
                               style: GoogleFonts.montserratAlternates(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 10,
-                                  color: Colors.white),
+                                  color: Pallete.whiteColor),
                             ),
                           )),
                     ),

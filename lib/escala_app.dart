@@ -1,4 +1,5 @@
-import 'package:escala_app/pages/home_page.dart';
+import 'package:escala_app/pages/login_page.dart';
+import 'package:escala_app/pallete.dart';
 import 'package:flutter/material.dart';
 
 class EscalaApp extends StatelessWidget {
@@ -9,8 +10,10 @@ class EscalaApp extends StatelessWidget {
     return MaterialApp(
       title: 'Escala App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.orange),
-      home: HomePage(),
+      theme: ThemeData.light().copyWith(
+        scaffoldBackgroundColor: Pallete.backgroundColor,
+      ),
+      home: const LoginPage(),
     );
   }
 }

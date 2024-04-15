@@ -2,6 +2,7 @@ import 'package:escala_app/models/escala.dart';
 import 'package:escala_app/pages/add_page.dart';
 import 'package:escala_app/pages/detalhes_page.dart';
 import 'package:escala_app/pages/escalas_page.dart';
+import 'package:escala_app/pallete.dart';
 import 'package:escala_app/repositories/escala_repository.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  reloadPage() {
+    setState(() {});
+  }
+
   mostrarDetalhes(Escala escala) {
     Navigator.push(context,
         MaterialPageRoute(builder: (_) => DetalhesPage(escala: escala)));
@@ -24,36 +29,42 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          actions: [
-            IconButton(
-                onPressed: () {
-                  setState(() {});
-                },
-                icon: const Icon(
-                  Icons.replay_outlined,
-                  color: Colors.black,
-                )),
-            IconButton(
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: IconButton(
               icon: const Icon(
                 Icons.add,
-                color: Colors.white,
+                size: 32,
+                color: Pallete.whiteColor,
               ),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (_) => EscalaAdd()),
+                  MaterialPageRoute(
+                      builder: (_) => EscalaAdd(reloadCallback: reloadPage)),
                 );
               },
-            )
-          ],
-          centerTitle: true,
-          title: const Text(
-            'Escalas Culto',
-            style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.w900, fontSize: 25),
-          ),
-          backgroundColor: Colors.redAccent),
-      body: EscalaPage(),
+            ),
+          )
+        ],
+        title: const Text(
+          'Escalas Culto',
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w900, fontSize: 25),
+        ),
+        backgroundColor: Colors.transparent,
+        flexibleSpace: Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+          colors: [Pallete.gradient1, Pallete.gradient2, Pallete.gradient3],
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+        ))),
+      ),
+      body: const EscalaPage(),
     );
   }
 }
