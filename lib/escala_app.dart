@@ -1,4 +1,4 @@
-import 'package:escala_app/pages/login_page.dart';
+import 'package:escala_app/src/features/escala/view/pages/login_page.dart';
 import 'package:escala_app/pallete.dart';
 import 'package:flutter/material.dart';
 

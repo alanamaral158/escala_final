@@ -1,6 +1,6 @@
-import 'package:escala_app/widgets/gradient_button.dart';
-import 'package:escala_app/widgets/login_field.dart';
-import 'package:escala_app/widgets/social_button.dart';
+import 'package:escala_app/src/features/escala/widgets/gradient_button.dart';
+import 'package:escala_app/src/features/escala/widgets/login_field.dart';
+import 'package:escala_app/src/features/escala/widgets/social_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {

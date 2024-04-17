@@ -1,8 +1,8 @@
-import 'package:escala_app/pages/edit_page.dart';
+import 'package:escala_app/src/features/escala/view/pages/edit_page.dart';
 import 'package:escala_app/pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:escala_app/models/escala.dart';
-import 'package:escala_app/pages/detalhes_page.dart';
+import 'package:escala_app/src/features/escala/view/pages/detalhes_page.dart';
 import 'package:escala_app/repositories/escala_repository.dart';
 import 'package:google_fonts/google_fonts.dart';
 

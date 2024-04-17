@@ -1,4 +1,4 @@
-import 'package:escala_app/pages/home_page.dart';
+import 'package:escala_app/src/features/escala/view/pages/home_page.dart';
 import 'package:escala_app/pallete.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +25,9 @@ class GradientButton extends StatelessWidget {
           fixedSize: const Size(360, 55),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
         child: const Text(
           'Entrar',

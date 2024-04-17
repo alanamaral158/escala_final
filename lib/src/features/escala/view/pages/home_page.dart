@@ -1,7 +1,7 @@
 import 'package:escala_app/models/escala.dart';
-import 'package:escala_app/pages/add_page.dart';
-import 'package:escala_app/pages/detalhes_page.dart';
-import 'package:escala_app/pages/escalas_page.dart';
+import 'package:escala_app/src/features/escala/view/pages/add_page.dart';
+import 'package:escala_app/src/features/escala/view/pages/detalhes_page.dart';
+import 'package:escala_app/src/features/escala/view/pages/escalas_page.dart';
 import 'package:escala_app/pallete.dart';
 import 'package:escala_app/repositories/escala_repository.dart';
 import 'package:flutter/material.dart';
@@ -40,12 +40,13 @@ class _HomePageState extends State<HomePage> {
                 size: 32,
                 color: Pallete.whiteColor,
               ),
-              onPressed: () {
-                Navigator.push(
+              onPressed: () async {
+                final result = await Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (_) => EscalaAdd(reloadCallback: reloadPage)),
+                      builder: (_) => AddPage(reloadCallback: reloadPage)),
                 );
+                if (result) setState(() {});
               },
             ),
           )

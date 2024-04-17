@@ -3,15 +3,15 @@ import 'package:escala_app/repositories/escala_repository.dart';
 
 import 'package:flutter/material.dart';
 
-class EscalaAdd extends StatefulWidget {
+class AddPage extends StatefulWidget {
   final Function() reloadCallback;
-  const EscalaAdd({super.key, required this.reloadCallback});
+  const AddPage({super.key, required this.reloadCallback});
 
   @override
-  State<EscalaAdd> createState() => _EscalaAddState();
+  State<AddPage> createState() => _AddPageState();
 }
 
-class _EscalaAddState extends State<EscalaAdd> {
+class _AddPageState extends State<AddPage> {
   final _formKey = GlobalKey<FormState>();
   final data = TextEditingController();
   final teclado = TextEditingController();
@@ -47,7 +47,7 @@ class _EscalaAddState extends State<EscalaAdd> {
 
       widget.reloadCallback();
 
-      Navigator.pop(context);
+      Navigator.pop(context, true);
     }
   }
 

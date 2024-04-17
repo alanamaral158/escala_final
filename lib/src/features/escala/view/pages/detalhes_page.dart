@@ -1,6 +1,6 @@
 import 'package:escala_app/models/escala.dart';
-import 'package:escala_app/pages/equipe_page.dart';
-import 'package:escala_app/pages/ordem_page.dart';
+import 'package:escala_app/src/features/escala/view/pages/equipe_page.dart';
+import 'package:escala_app/src/features/escala/view/pages/ordem_page.dart';
 import 'package:escala_app/pallete.dart';
 import 'package:flutter/material.dart';
 
